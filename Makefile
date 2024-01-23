@@ -1,15 +1,15 @@
 install:
-    install -m 755 your_script.pl /usr/local/bin/your_script
-    install -m 644 your_script.service /etc/systemd/system/your_script.service
+    install -m 755 mqtt-date-time.pl /usr/local/bin/mqtt-date-time.pl
+    install -m 644 mqtt-date-time.service /etc/systemd/system/mqtt-date-time.service
     systemctl daemon-reload
-    systemctl enable your_script.service
-    systemctl start your_script.service
+    systemctl enable mqtt-date-time.service
+    systemctl start mqtt-date-time.service
 
 uninstall:
-    systemctl stop your_script.service
-    systemctl disable your_script.service
-    rm -f /usr/local/bin/your_script
-    rm -f /etc/systemd/system/your_script.service
+    systemctl stop mqtt-date-time.service
+    systemctl disable mqtt-date-time.service
+    rm -f /usr/local/bin/mqtt-date-time.pl
+    rm -f /etc/systemd/system/mqtt-date-time.service
     systemctl daemon-reload
 
 .PHONY: install uninstall
