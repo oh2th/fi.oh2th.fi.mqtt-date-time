@@ -1,0 +1,14 @@
+[Unit]
+Description=MQTT Date-Time Updater
+After=network.target mosquitto.service
+Wants=mosquitto.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=30
+ExecStart=/usr/local/bin/mqtt-date-time.pl
+
+[Install]
+WantedBy=default.target
