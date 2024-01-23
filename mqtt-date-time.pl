@@ -6,13 +6,14 @@ use Net::MQTT::Simple;
 use Time::HiRes qw(gettimeofday);
 
 # MQTT broker configuration
-my $mqtt_broker   = 'mqtt://your_broker_address'; # Replace with your MQTT broker address
+my $mqtt_broker   = 'mqtt.oh2th.fi'; # Replace with your MQTT broker address
 
 # Function to get the current date and time in the specified format
 sub get_formatted_datetime {
     my ($sec, $min, $hour, $mday, $mon, $year, $wday) = localtime(time);
-    
-    my @days = qw(Su Ma Tu We Th Fr Sa);
+
+		# Finnish weekdays
+    my @days = qw(Su Ma Ti Ke To Pe La);
     my $weekday = $days[$wday];
 
     $year += 1900;
